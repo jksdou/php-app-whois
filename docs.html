@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Whois查询工具</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="description" content="Whois查询工具" />
+    <meta name="keywords" content="Whois查询工具,Whois,phpWhois" />
+    <meta name="author" content="Jackson" />
+    <meta name="copyright" content="CROGRAM" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            padding-top: 20px;
+            margin-bottom: 160px;
+        }
+
+        .page-header {
+            margin-top: 0;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer>.container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .footer p {
+            margin: 20px 0;
+        }
+
+        code {
+            font-size: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Whois 查询工具</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <p class="page-header">本 Whois 查询工具基于 <a href="http://www.phpwhois.org" title="phpWhois web page" target="_blank">phpWhois</a> 开发。</p>
+        <form method="get" class="form" action="{self}">
+            <h3>输入任意域名、IP地址</h3>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" name="query" required class="form-control" placeholder="输入任意域名、IP地址" />
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-default" value="查询" />
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="checkbox-inline"><input type="checkbox" name="fast" value="1" /> 快速查找</label>
+                <label class="radio-inline"><input type="radio" name="output" value="normal" /> 显示原始内容</label>
+                <label class="radio-inline"><input type="radio" name="output" value="nice" checked="checked" /> 显示HTML</label>
+                <label class="radio-inline"><input type="radio" name="output" value="object" /> 显示PHP Object</label>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <!--results-->
+        <p><b>{query} 的完整 WHOIS 信息:</b></p>
+        {result}
+        <!--/results-->
+    </div>
+    <div class="footer">
+        <div class="container">
+            <footer class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-text pull-left">
+                        <span>&copy; 2011-2023 <a href="https://github.com/jksdou" target="_blank">Jackson Dou</a></span>
+                        <span> | <a href="https://github.com/jksdou/php-app-whois" target="_blank">Github</a></span>
+                        <span class="hidden-xs"> | 友情链接：<a href="https://crogram.org" target="_blank" title="程江开源项目中心">CROGRAM</a> &bull; <a href="https://uinote.com" target="_blank">UINOTE</a> &bull; <a href="https://uiisc.org" target="_blank">UIISC</a></span>
+                    </div>
+                    <div class="navbar-text pull-right">
+                        <span class="hidden-xs">Powered by </span><span><a href="https://crogram.com/" target="_blank" title="程江科技">CROGRAM</a></span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
